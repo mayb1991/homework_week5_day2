@@ -10,7 +10,7 @@ def home():
 
 @app.route('/pokemon_search', methods=['GET', 'POST'])
 def search():
-    form = PokemonSearchForm
+    form = PokemonSearchForm()
     pokemon_info = {}
     if request.method == 'POST':
         pn = form.name.data
