@@ -11,16 +11,33 @@
 <title>Title</title>
 </head>
 <body>
-    <div class="container">
-        <nav class="navbar bg-light">
-            <div class="container-fluid">
-              <form class="d-flex" role="search" method="POST">
-                <input name="pokemon" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-dark" type="submit">Search</button>
-              </form>
-            </div>
-          </nav>
+
+  <form class="container" method="POST">
+    
+
+      {{ form.name  }}
+      {{ form.submit }}
+  </form>
+
+  {% if pokemon_info %}
+  <div class="card" style="width: 18rem;">
+    <img src="{{ pokemon_info.sprite }}" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">{{ pokemon_info.name }}</h5>
+      <p class="card-text">
+        <p>Ability: {{ pokemon_info.ability }}</p>
+        <ul>
+          <li>HP: {{ pokemon_info.hp }}</li>
+          <li>Attack: {{ pokemon_info.attack }}</li>
+          <li>D#: {{ pokemon_info.def }}</li>
+        </ul>
+
+      </p>
     </div>
+  </div>
+  
+  
+  {% endif %}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/js/bootstrap.min.js"></script>
 </body>
